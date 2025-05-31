@@ -18,9 +18,10 @@ public class Flower : MonoBehaviour
         RunAway();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         Debug.Log(this.gameObject + "Collided with " + collision.gameObject);
+
         if(collision.gameObject.CompareTag("Player"))
         {
             Debug.Log(this.gameObject + "Collided with THE PLAYER!1!");

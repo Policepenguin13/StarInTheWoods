@@ -18,7 +18,7 @@ public class PlayerControls : MonoBehaviour
 
     public CharacterController controller;
     public float speed = 60f;
-    // InputSystem_Actions controls;
+    InputSystem_Actions controls;
     Vector2 move;
 
     public float smoothDampTime = 0.1f;
@@ -53,12 +53,12 @@ public class PlayerControls : MonoBehaviour
 
     private void Awake()
     {
-       // controls = new InputSystem_Actions();
+       controls = new InputSystem_Actions();
 
-       // controls.Player.Interact.performed += ctx => Interact();
+       controls.Player.Interact.performed += ctx => Interact();
 
-       // controls.Player.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
-       // controls.Player.Move.canceled += ctx => move = Vector2.zero;
+       controls.Player.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
+       controls.Player.Move.canceled += ctx => move = Vector2.zero;
     }
 
     void Interact()
@@ -69,11 +69,11 @@ public class PlayerControls : MonoBehaviour
 
     void OnEnable()
     {
-        // controls.Player.Enable();
+        controls.Player.Enable();
     }
 
     void OnDisable()
     {
-        // controls.Player.Disable();
+        controls.Player.Disable();
     }
 }
