@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7722797889092357550}
   - component: {fileID: 4217984711170203494}
   - component: {fileID: 713746281810203787}
+  - component: {fileID: 73334938866486088}
   m_Layer: 5
   m_Name: QuestMenuCanvas
   m_TagString: Untagged
@@ -102,6 +103,27 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &73334938866486088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396492066711250837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f0262bbd49b374283bebc60b5f67bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 0}
+  player: {fileID: 0}
+  questWindow: {fileID: 0}
+  questZero: {fileID: 0}
+  questOne: {fileID: 0}
+  questTwo: {fileID: 0}
+  questThree: {fileID: 0}
+  questFour: {fileID: 0}
+  questFive: {fileID: 0}
 --- !u!1 &1085166521902854227
 GameObject:
   m_ObjectHideFlags: 0
