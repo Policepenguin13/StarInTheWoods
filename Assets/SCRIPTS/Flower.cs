@@ -24,29 +24,29 @@ public class Flower : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log(this.gameObject + "Collided with THE PLAYER!1!");
+            // Debug.Log(this.gameObject + "Collided with THE PLAYER!1!");
             RunAway();
         }
         else if (collision.gameObject.CompareTag("MUSHROAM"))
         {
-            Debug.Log(this.gameObject + "Collided with a Mushroom!!!!");
+            // Debug.Log(this.gameObject + "Collided with a Mushroom!!!!");
             RunAway();
         }
         else if (collision.gameObject.CompareTag("FLOWER"))
         {
-            Debug.Log(this.gameObject + "Collided with a flower...");
+            // Debug.Log(this.gameObject + "Collided with a flower...");
             ShuffleAway();
         }
         else if (collision.gameObject.CompareTag("ENVIRON"))
         {
-            Debug.Log(this.gameObject + "collided with environment");
+            // Debug.Log(this.gameObject + "collided with environment");
             ShuffleAway();
         }
     }
 
     public void ShuffleAway()
     {
-        Debug.Log("Shuffling Away!!!!!");
+        // Debug.Log("Shuffling Away!!!!!");
         transform.Translate(Random.Range(10, 50), 0, Random.Range(10, 50));
         // float Xdist = flowerPatches[choosing].transform.position.x - transform.position.x;
         // float Zdist = flowerPatches[choosing].transform.position.z - transform.position.z;
@@ -57,7 +57,7 @@ public class Flower : MonoBehaviour
     {
         choosing = Random.Range(0, flowerPatches.Length);
         transform.position = flowerPatches[choosing].transform.position;
-        Debug.Log(this.gameObject + "choosing = " + choosing.ToString());
+        // Debug.Log(this.gameObject + "choosing = " + choosing.ToString());
         transform.Translate(Random.Range(10,50), 0, Random.Range(10, 50));
         // float Xdist = flowerPatches[choosing].transform.position.x - transform.position.x;
         // float Zdist = flowerPatches[choosing].transform.position.z - transform.position.z;

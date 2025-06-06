@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class StartleState : StateMachineBehaviour
 {
+    // Mushroom finds the direction / looks at the thing it just collided with,
+    // then looks in the opposite direction and goes for like 8 seconds or something
+    // then it exits the state
+
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

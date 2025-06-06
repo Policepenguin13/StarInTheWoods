@@ -16132,7 +16132,7 @@ MonoBehaviour:
   questToGive:
     IsActive: 0
     Title: Gather Flowers
-    Item: FLOWER
+    Item: FLOWERS
     Amount: 5
   player: {fileID: 238510531}
   questPopup: {fileID: 2075403398}
@@ -16348,6 +16348,10 @@ PrefabInstance:
     - target: {fileID: 3306266422063821802, guid: 8d36647f368d762409d4080373c4287f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306266422063821802, guid: 8d36647f368d762409d4080373c4287f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 4960956863570182005, guid: 8d36647f368d762409d4080373c4287f, type: 3}
       propertyPath: HorizontalAxis.Center

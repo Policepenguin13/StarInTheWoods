@@ -22,9 +22,9 @@ public class Player : MonoBehaviour
         Inventory.Add("BERRIES", 0);
     }
 
-    public void AddItemToInventory(string item)
+    public void AddItemToInventory(string item, int amount)
     {
-        Inventory[item] += 1;
+        Inventory[item] += amount;
         Debug.Log(Inventory[item].ToString() + " " + item + " GATHERED!");
     }
 }
