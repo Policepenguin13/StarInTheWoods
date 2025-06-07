@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class FPmove : MonoBehaviour
 {
+    // Player movement script, made using Brackey's "FIRST PERSON MOVEMENT in Unity - FPS Controller" video.
+
     public CharacterController controller;
-    
 
     public float speed = 12f;
     public float gravity = -9.81f;
@@ -14,7 +15,6 @@ public class FPmove : MonoBehaviour
 
     Vector3 Velocity;
     bool isGrounded;
-
 
     // Update is called once per frame
     void Update()
