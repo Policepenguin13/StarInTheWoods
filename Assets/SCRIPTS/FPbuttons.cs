@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FPbuttons : MonoBehaviour
@@ -6,6 +7,10 @@ public class FPbuttons : MonoBehaviour
     // like pressing Interact or the button to open their Inventory
 
     InputSystem_Actions controls;
+
+    public bool NPCinRange = false;
+
+    Transform NPCinQuestion;
 
     private void Awake()
     {
@@ -26,13 +31,44 @@ public class FPbuttons : MonoBehaviour
         controls.FPactions.Disable();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("NPC"))
+        {
+            NPCinRange = true;
+            NPCinQuestion = other.transform;
+        } else
+        {
+            return;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("NPC"))
+        {
+            NPCinRange = false;
+            NPCinQuestion = null;
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    // In this code, if there's already something happening (like dialogue),
+    // it will continue forward in that dialogue or accept the quest, OR if a thing
+    // isn't happening, it will check if interactable things are in range, and
+    // initiate dialogue/interaction if they are
     void InteractNext()
     {
+
         Debug.Log("INTERACT NEXT HAS BEEN PERFORMED");
-        // In this code, if there's already something happening (like dialogue),
-        // it will continue forward in that dialogue or accept the quest, OR if a thing
-        // isn't happening, it will check if interactable things are in range, and
-        // initiate dialogue/interaction if they are
+
+        if (NPCinRange)
+        {
+            NPCinQuestion.GetComponent<NPC>().Interact();
+        }
+
     }
 
     void Quest()

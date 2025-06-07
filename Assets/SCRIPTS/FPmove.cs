@@ -6,6 +6,10 @@ public class FPmove : MonoBehaviour
 
     public CharacterController controller;
 
+    InputSystem_Actions controls;
+
+    Vector2 go;
+
     public float speed = 12f;
     public float gravity = -9.81f;
 
@@ -15,6 +19,13 @@ public class FPmove : MonoBehaviour
 
     Vector3 Velocity;
     bool isGrounded;
+    private void Awake()
+    {
+        controls = new InputSystem_Actions();
+
+        controls.FPactions.Move.performed += ctx => go = ctx.ReadValue<Vector2>();
+        controls.FPactions.Move.canceled += ctx => go = Vector2.zero;
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,8 +37,11 @@ public class FPmove : MonoBehaviour
             Velocity.y = -2f;
         }
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        // float x = Input.GetAxis("Horizontal");
+        // float z = Input.GetAxis("Vertical");
+
+        float x = go.x;
+        float z = go.y;
 
         Vector3 move = transform.right * x + transform.forward * z;
 
@@ -36,5 +50,14 @@ public class FPmove : MonoBehaviour
         Velocity.y += gravity * Time.deltaTime;
 
         controller.Move(Velocity * Time.deltaTime);
+    }
+
+    private void OnEnable()
+    {
+        controls.FPactions.Enable();
+    }
+    private void OnDisable()
+    {
+        controls.FPactions.Disable();
     }
 }

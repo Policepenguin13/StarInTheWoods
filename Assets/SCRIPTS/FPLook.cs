@@ -30,9 +30,6 @@ public class FPLook : MonoBehaviour
 
         // controls.FPactions.InteractNext.performed += ctx => InteractNext();
         // ^ that code was moved to the FPbutton script
-
-        // put controller left/right stick looking around things here
-
     }
 
 

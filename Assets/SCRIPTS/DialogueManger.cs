@@ -18,6 +18,8 @@ public class DialogueManger : MonoBehaviour
 
     private MyDialogue convo;
 
+    public bool AmTalking = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
