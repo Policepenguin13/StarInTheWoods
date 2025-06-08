@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class FPmove : MonoBehaviour
 {
-    // Player movement script, made using Brackey's "FIRST PERSON MOVEMENT in Unity - FPS Controller" video.
+    // Player movement script, made using Brackey's "FIRST PERSON MOVEMENT in
+    // Unity - FPS Controller" video, and edited from there.
 
     public CharacterController controller;
 
     InputSystem_Actions controls;
 
     Vector2 go;
+
+    public bool CanMove = true;
 
     public float speed = 12f;
     public float gravity = -9.81f;
@@ -42,6 +45,12 @@ public class FPmove : MonoBehaviour
 
         float x = go.x;
         float z = go.y;
+
+        if (CanMove == false)
+        {
+            x = 0f;
+            z = 0f;
+        }
 
         Vector3 move = transform.right * x + transform.forward * z;
 

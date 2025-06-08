@@ -6,6 +6,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        FindFirstObjectByType<DialogueManger>().StartDialogue(dialogue);
+        FindFirstObjectByType<DialogueManger>().StartDialogue(dialogue, dialogue.gameObject);
     }
 }

@@ -7,11 +7,12 @@ TagManager:
   - MUSHROAM
   - FLOWER
   - ENVIRON
+  - NPC
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PLAYERSEE
   - Water
   - UI
   - Ground

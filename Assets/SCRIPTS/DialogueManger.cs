@@ -12,9 +12,11 @@ public class DialogueManger : MonoBehaviour
     TextMeshProUGUI saying;
     TextMeshProUGUI NPCname;
 
+    public GameObject whoIsSpeaking;
+
     public Animator animator;
 
-    private Queue<string> sentences;
+    public Queue<string> sentences;
 
     private MyDialogue convo;
 
@@ -27,10 +29,14 @@ public class DialogueManger : MonoBehaviour
 
         saying = displayText.GetComponent<TextMeshProUGUI>();
         NPCname = displayName.GetComponent<TextMeshProUGUI>();
+
+        animator.SetBool("IsOpen", false);
     }
 
-    public void StartDialogue(MyDialogue dialogue)
+    public void StartDialogue(MyDialogue dialogue, GameObject speaker)
     {
+        whoIsSpeaking = speaker;
+
         animator.SetBool("IsOpen", true);
         
         Debug.Log("Starting conversation with " + dialogue.NPCname);
@@ -76,5 +82,8 @@ public class DialogueManger : MonoBehaviour
     {
         Debug.Log("End of conversation with " + convo.name);
         animator.SetBool("IsOpen", false);
+        AmTalking = false;
+        whoIsSpeaking.GetComponent<NPC>().DialogueEnded();
+        whoIsSpeaking = null;
     }
 }
