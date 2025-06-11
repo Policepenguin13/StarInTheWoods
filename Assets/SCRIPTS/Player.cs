@@ -10,7 +10,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    // This script handles all the inventory and quest stuff
+    // This script handles the player-side inventory and quest stuff
 
     public int TotalQuestsCompleted = 0;
     // every interval of 3, starfall!
@@ -22,12 +22,15 @@ public class Player : MonoBehaviour
     //public List<Quest> Quests = new List<Quest>();
 
     public Dictionary<string, int> Quests = new();
-    public List<Transform> questGivers = new();
+    // public List<Transform> questGivers = new();
+    List<string> Questprintout = new();
 
     public Dictionary<string, int> Inventory = new();
 
-    private float timer = 0f;
-    private bool timerOn = false;
+    private float ItemTimer = 0f;
+    private bool ItemTimerOn = false;
+    private float QuestTimer = 0f;
+    private bool QuestTimerOn = false;
 
     private void Start()
     {
@@ -39,55 +42,89 @@ public class Player : MonoBehaviour
         Inventory.Add("MUSHROOMS",0);
 
         Quests.Clear();
-        questGivers.Clear();
+        // questGivers.Clear();
     }
 
     public void AddItemToInventory(string item, int amount)
     {
         Inventory[item] += amount;
-        Debug.Log(Inventory[item].ToString() + " " + item + " GATHERED!");
+        // Debug.Log(Inventory[item].ToString() + " " + item + " GATHERED!");
+
         TextMeshProUGUI words = GetComponent<FPbuttons>().popups[2].GetComponent<TextMeshProUGUI>();
-        words.text = "+ " + amount.ToString() + " " + item.ToUpper() + "!";
+        if (amount < 0)
+        {
+            words.text = "- " + amount.ToString() + " " + item.ToUpper() + "!";
+        }
+        else
+        {
+            words.text = "+ " + amount.ToString() + " " + item.ToUpper() + "!";
+        }
         this.gameObject.GetComponent<FPbuttons>().popups[2].gameObject.SetActive(true);
-        timerOn = true;
-        timer += 3f;
+        ItemTimerOn = true;
+        ItemTimer += 3f;
         // words = FPbuttons.popups[2].GetComponent<TextMeshProUGUI>();
         // words.text = "+ " + amount.ToString() + " " + item.ToUpper() + "!";
     }
 
-    private void TimesUp()
+    private void ItemTimesUp()
     {
         this.gameObject.GetComponent<FPbuttons>().popups[2].gameObject.SetActive(false);
-        timer = 0f;
+        ItemTimer = 0f;
+    }
+    private void QuestTimesUp()
+    {
+        this.gameObject.GetComponent<FPbuttons>().popups[2].gameObject.SetActive(false);
+        ItemTimer = 0f;
     }
 
     private void Update()
     {
-        if (timerOn)
+        if (ItemTimerOn)
         {
-            timer -= Time.deltaTime;
-        } if (timer <= 0.0) 
+            ItemTimer -= Time.deltaTime;
+            if (ItemTimer <= 0.0)
+            {
+                ItemTimesUp();
+                ItemTimerOn = false;
+            }
+        }
+        if (QuestTimerOn)
         {
-            TimesUp();
-            timerOn = false;
+            QuestTimer -= Time.deltaTime;
+            if (QuestTimer <= 0.0)
+            {
+                QuestTimesUp();
+                QuestTimerOn = false;
+            }
         }
     }
 
-    public void AddQuest(string item, int goalamount, Transform provider)
+    public void AddQuest(string item, int goalamount) //Transform provider)
     {
         Quests.Add(item, goalamount);
-        // Quests.ToArray();
-        Debug.Log(Quests.ToString());
-        questGivers.Add(provider);
-        Debug.Log(questGivers.ToString());
+        string ele = "(" + item +"  "+ goalamount.ToString()+")";
+        Questprintout.Add(ele);
+
+        Debug.Log("Added " + item + " " + goalamount.ToString() + " to quests");
+
+        Debug.Log(Questprintout.ToString());
+        //Debug.Log(Quests.ToString());
+
+        this.gameObject.GetComponent<FPbuttons>().popups[1].gameObject.SetActive(true);
+        QuestTimerOn = true;
+        QuestTimer += 3f;
+
+        // questGivers.Add(provider);
+        // Debug.Log(questGivers.ToString());
         // int giverNumber = questGivers.IndexOf(provider);
         // Debug.Log(provider.name.ToUpper() + "'s quest is at index" + giverNumber.ToString());
-        return;
+        // return;
         // list transform QuestGivers 
     }
 
-    public void UpdateQuests()
+    public void RemoveQuest(string item)
     {
-        Debug.Log("Oopsies no quests rn");
+        Quests.Remove(item);
+        Debug.Log("Removed " + item + " from quests");
     }
 }

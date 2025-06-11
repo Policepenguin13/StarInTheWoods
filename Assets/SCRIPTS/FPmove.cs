@@ -7,7 +7,10 @@ public class FPmove : MonoBehaviour
 
     public CharacterController controller;
 
-    InputSystem_Actions controls;
+    InputSystem_Actions controls; 
+    // no idea why this is giving me the warning
+    // CS0649 Field 'FPmove.controls' is never assigned to, and will always have it's default value null
+    // when it gets assigned in Awake and none of the other scripts give this warning
 
     Vector2 go;
 

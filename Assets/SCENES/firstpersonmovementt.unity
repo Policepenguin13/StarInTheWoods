@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 19706528}
   - component: {fileID: 19706529}
   m_Layer: 3
-  m_Name: talk
+  m_Name: AllQuestsDone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,6 +304,7 @@ MonoBehaviour:
   sentences:
   - Hello!
   - How's your day been?
+  - Thanks again for all the berries!
 --- !u!1 &24140355
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +317,7 @@ GameObject:
   - component: {fileID: 24140358}
   - component: {fileID: 24140357}
   m_Layer: 5
-  m_Name: number
+  m_Name: FlowerNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -857,7 +858,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 653299658}
+  - {fileID: 899746203}
+  - {fileID: 990561992}
+  - {fileID: 655918446}
   - {fileID: 19706528}
+  - {fileID: 2047173496}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &187754046
@@ -893,8 +898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3482f4a490594334aa12de0e22db6067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talk: {fileID: 19706527}
+  Talks: []
   player: {fileID: 2118909891}
+  Item: BERRIES
+  FirstQuestAmount: 5
+  SecondQuestAmount: 10
+  ThirdQuestAmount: 20
 --- !u!1 &188008595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,6 +2845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 623515440}
+  - component: {fileID: 623515441}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -2867,11 +2877,77 @@ RectTransform:
   m_AnchoredPosition: {x: -50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &623515441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623515439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1eb4576c8339d40bf135b989d60988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2118909896}
+  numbers:
+  - {fileID: 1058303143}
+  - {fileID: 1549605977}
+  - {fileID: 24140355}
+  - {fileID: 1499627771}
 --- !u!4 &653299658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9f0b9f8603fbb97409af0c4433936bec, type: 3}
   m_PrefabInstance: {fileID: 42103484}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &655918445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655918446}
+  - component: {fileID: 655918447}
+  m_Layer: 3
+  m_Name: QuestInProgress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &655918446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655918445}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 187754044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &655918447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655918445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Snowflake
+  sentences:
+  - Gosh, I'm really craving those muffins...
+  - How are you going picking those berries?
 --- !u!1 &691906611
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,6 +3393,55 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000016928, y: 0.24999}
   m_SizeDelta: {x: 85, y: 84.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &899746202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 899746203}
+  - component: {fileID: 899746204}
+  m_Layer: 3
+  m_Name: GiveFirstQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &899746203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899746202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 187754044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &899746204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899746202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Snowflake
+  sentences:
+  - I was just about to make wildberry muffins,
+  - But I realised I'm missing the one named ingredient, the wildberries!
+  - Can you go find some berries for me, please?
 --- !u!1 &914241219
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,6 +3742,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982456437}
   m_CullTransparentMesh: 1
+--- !u!1 &990561991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 990561992}
+  - component: {fileID: 990561993}
+  m_Layer: 3
+  m_Name: GiveQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &990561992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990561991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 187754044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &990561993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990561991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Snowflake
+  sentences:
+  - I've checked the recipe, and I still don't have enough berries for the muffins!
+  - Sorry I didn't tell you earlier, I'd forgotten how many the recipe needed!
+  - Can you go find some berries for me, please?
 --- !u!4 &1017524986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d0822586e4708b40b1db0beae4dea5d, type: 3}
@@ -3634,7 +3808,7 @@ GameObject:
   - component: {fileID: 1058303146}
   - component: {fileID: 1058303145}
   m_Layer: 5
-  m_Name: number
+  m_Name: StarNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4236,7 +4410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046099433678708894, guid: c0c65bee720ced24da44872aa48a4409, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7198632024306151525, guid: c0c65bee720ced24da44872aa48a4409, type: 3}
       propertyPath: m_LocalScale.z
@@ -5186,7 +5360,7 @@ GameObject:
   - component: {fileID: 1499627774}
   - component: {fileID: 1499627773}
   m_Layer: 5
-  m_Name: number
+  m_Name: MushroomNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5322,7 +5496,7 @@ GameObject:
   - component: {fileID: 1549605980}
   - component: {fileID: 1549605979}
   m_Layer: 5
-  m_Name: number
+  m_Name: BerryNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7093,6 +7267,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010092068}
   m_CullTransparentMesh: 1
+--- !u!1 &2047173495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047173496}
+  - component: {fileID: 2047173497}
+  m_Layer: 3
+  m_Name: SubmittingQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2047173496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047173495}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 187754044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2047173497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047173495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Snowflake
+  sentences:
+  - Ah, you've got the berries I asked for!
+  - Thank you 'berry' much!
 --- !u!1 &2113969535
 GameObject:
   m_ObjectHideFlags: 0
@@ -7330,6 +7552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCinRange: 0
+  interacting: 0
   UI: {fileID: 465712674}
   popups: []
 --- !u!114 &2118909896
@@ -7345,7 +7568,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalQuestsCompleted: 0
-  questGivers: []
 --- !u!54 &2118909897
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7405,6 +7627,7 @@ GameObject:
   - component: {fileID: 2138264029}
   - component: {fileID: 2138264031}
   - component: {fileID: 2138264030}
+  - component: {fileID: 2138264032}
   m_Layer: 5
   m_Name: QuestsPanel
   m_TagString: Untagged
@@ -7474,6 +7697,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138264028}
   m_CullTransparentMesh: 1
+--- !u!114 &2138264032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138264028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663441f2bde14bb4e909a65468e6e30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

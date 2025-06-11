@@ -40,7 +40,7 @@ public class DialogueManger : MonoBehaviour
         animator.SetBool("IsOpen", true);
         
         Debug.Log("Starting conversation with " + dialogue.NPCname);
-        NPCname.text = dialogue.NPCname.ToUpper();
+        NPCname.text = dialogue.NPCname; //.ToUpper();
         convo = dialogue;
 
         sentences.Clear();

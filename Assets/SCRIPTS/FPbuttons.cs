@@ -10,6 +10,7 @@ public class FPbuttons : MonoBehaviour
     InputSystem_Actions controls;
 
     public bool NPCinRange = false;
+    public bool interacting = false;
 
     public GameObject UI;
     public List<Transform> popups = new();
@@ -64,8 +65,10 @@ public class FPbuttons : MonoBehaviour
             NPCinQuestion = other.transform;
             // Debug.Log(other.ToString() + " IS AN NPC!");
             
-            popups[0].gameObject.SetActive(true);
-
+            if (interacting == false)
+            {
+                popups[0].gameObject.SetActive(true);
+            }
         } else
         {
             // Debug.Log(other.ToString() + " isnt an npc, returning... (triggerEnter)");
@@ -74,7 +77,7 @@ public class FPbuttons : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.ToString() + " HAS LEFT PLAYER'S RANGE");
+        // Debug.Log(other.ToString() + " HAS LEFT PLAYER'S RANGE");
         if (other.CompareTag("NPC"))
         {
             NPCinRange = false;
@@ -100,6 +103,7 @@ public class FPbuttons : MonoBehaviour
         if (NPCinRange)
         {
             NPCinQuestion.GetComponent<NPC>().Interact();
+            // interacting = true;
             // this.GetComponent<FPmove>().enabled = false;
             // Debug.Log("movement script disabled");
         }
@@ -110,7 +114,7 @@ public class FPbuttons : MonoBehaviour
     void Quest()
     {
         Debug.Log("quest action performed");
-        this.gameObject.GetComponent<Player>().UpdateQuests();
+        // this.gameObject.GetComponent<Player>().UpdateQuests();
         popups[3].gameObject.SetActive(true);
     }
 
@@ -118,6 +122,8 @@ public class FPbuttons : MonoBehaviour
     void Inventory()
     {
         Debug.Log("Inventory Action Was Just Performed");
+        // this.gameObject.GetComponent<Player>().UpdateQuests();
+        popups[4].gameObject.SetActive(true);
     }
 
     // skips dialogue or closes the inventory / quest menu
