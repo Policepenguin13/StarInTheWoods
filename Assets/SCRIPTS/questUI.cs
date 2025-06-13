@@ -70,7 +70,7 @@ public class questUI : MonoBehaviour
                     QuestAmount = player.Quests[item];
                     // Debug.Log("quest amount = " + QuestAmount.ToString());
 
-                    thing.GetComponent<TextMeshProUGUI>().text = "Find " + item + "  (" + InventoryAmount.ToString() + " / " + QuestAmount.ToString() + ")";
+                    thing.GetComponent<TextMeshProUGUI>().text = "Find " + item.ToLower() + "  (" + InventoryAmount.ToString() + " / " + QuestAmount.ToString() + ")";
                 }
                 
                 questcount += 1;

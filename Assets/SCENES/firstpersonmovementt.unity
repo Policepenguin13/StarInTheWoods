@@ -256,6 +256,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2443134}
   m_CullTransparentMesh: 1
+--- !u!1 &19609669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19609670}
+  m_Layer: 0
+  m_Name: waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &19609670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19609669}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 548349513}
+  - {fileID: 411330737}
+  - {fileID: 37825420}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &19706527
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +475,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24140355}
   m_CullTransparentMesh: 1
+--- !u!1 &37825419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 37825420}
+  m_Layer: 0
+  m_Name: sw wp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &37825420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37825419}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -35, y: 0, z: -25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 19609670}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &41653677
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +670,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f0b9f8603fbb97409af0c4433936bec, type: 3}
+--- !u!1 &75493400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75493401}
+  - component: {fileID: 75493402}
+  m_Layer: 3
+  m_Name: AllQuestsDone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &75493401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75493400}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 742074634}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &75493402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75493400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Ginger
+  sentences:
+  - Hey there!
+  - I haven't put the flowers up yet, but they're going to look great!
+  - Thanks for all the help, by the way!
 --- !u!1001 &98913739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -853,7 +967,7 @@ Transform:
   m_GameObject: {fileID: 187754043}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 1, z: -9}
+  m_LocalPosition: {x: 25, y: 0.65, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -979,6 +1093,92 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188008595}
   m_CullTransparentMesh: 1
+--- !u!1001 &199655078
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1636144890}
+    m_Modifications:
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806376086239897289, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_Name
+      value: Flower (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[0]'
+      value: 
+      objectReference: {fileID: 548349512}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[1]'
+      value: 
+      objectReference: {fileID: 411330736}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[2]'
+      value: 
+      objectReference: {fileID: 37825419}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+--- !u!4 &199655079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+  m_PrefabInstance: {fileID: 199655078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &256657074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,6 +1564,92 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303711086}
   m_CullTransparentMesh: 1
+--- !u!1001 &315404695
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1636144890}
+    m_Modifications:
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806376086239897289, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_Name
+      value: Flower (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[0]'
+      value: 
+      objectReference: {fileID: 411330736}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[1]'
+      value: 
+      objectReference: {fileID: 548349512}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[2]'
+      value: 
+      objectReference: {fileID: 37825419}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+--- !u!4 &315404696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+  m_PrefabInstance: {fileID: 315404695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &339620230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,6 +2078,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393901490}
   m_CullTransparentMesh: 1
+--- !u!1 &411330736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 411330737}
+  m_Layer: 0
+  m_Name: nw wp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &411330737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411330736}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20, y: 0, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 19609670}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415103581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,6 +2188,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &435653758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435653759}
+  - component: {fileID: 435653760}
+  m_Layer: 3
+  m_Name: GiveFirstQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &435653759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435653758}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1221525484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &435653760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435653758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Snowflake
+  sentences:
+  - Hello there!
+  - I was just about to make wildberry muffins,
+  - But I realised I'm missing the one named ingredient, the wildberries!
+  - Can you go find some berries for me, please?
 --- !u!1 &444958883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,6 +2491,117 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &510189427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 510189428}
+  - component: {fileID: 510189429}
+  m_Layer: 3
+  m_Name: GiveQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &510189428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510189427}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1221525484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &510189429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510189427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Snowflake
+  sentences:
+  - I've checked the recipe, and I still don't have enough berries for the muffins!
+  - Sorry I didn't tell you earlier, I'd forgotten how many the recipe needed!
+  - Can you go find some berries for me, please?
+--- !u!1001 &522872849
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 742074634}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+      propertyPath: m_Name
+      value: NPCorangeCat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+--- !u!4 &522872850 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b56f7971a74f099459a01d174029ad16, type: 3}
+  m_PrefabInstance: {fileID: 522872849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &534304570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,6 +2817,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546275738}
   m_CullTransparentMesh: 1
+--- !u!1 &548349512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 548349513}
+  m_Layer: 0
+  m_Name: ne wp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &548349513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548349512}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 19609670}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &562066794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,6 +3059,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564969354}
   m_CullTransparentMesh: 1
+--- !u!1 &568741137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568741138}
+  - component: {fileID: 568741139}
+  m_Layer: 3
+  m_Name: QuestInProgress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &568741138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568741137}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1221525484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &568741139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568741137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Snowflake
+  sentences:
+  - Gosh, I'm really craving those muffins...
+  - How are you going picking those berries?
 --- !u!1 &589931539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,6 +3687,84 @@ Transform:
   - {fileID: 1312640521}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &742074631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 742074634}
+  - component: {fileID: 742074633}
+  - component: {fileID: 742074632}
+  m_Layer: 3
+  m_Name: ginger the NPC
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &742074632
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742074631}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 73
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4, y: 2.4, z: 2.4}
+  m_Center: {x: 0, y: 1.2, z: 0}
+--- !u!114 &742074633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742074631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3482f4a490594334aa12de0e22db6067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Talks: []
+  player: {fileID: 2118909891}
+  Item: FLOWERS
+  FirstQuestAmount: 10
+  SecondQuestAmount: 20
+  ThirdQuestAmount: 30
+--- !u!4 &742074634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742074631}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
+  m_LocalPosition: {x: 40, y: 0.65, z: -35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 522872850}
+  - {fileID: 1269112756}
+  - {fileID: 1038025068}
+  - {fileID: 1222212199}
+  - {fileID: 75493401}
+  - {fileID: 1797502439}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
 --- !u!1 &762362283
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,6 +4036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCname: Snowflake
   sentences:
+  - Hello there!
   - I was just about to make wildberry muffins,
   - But I realised I'm missing the one named ingredient, the wildberries!
   - Can you go find some berries for me, please?
@@ -3629,6 +4265,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960483452}
   m_CullTransparentMesh: 1
+--- !u!1001 &975848560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1221525484}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+      propertyPath: m_Name
+      value: NPCbrownMouse
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+--- !u!4 &975848561 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d4ba77e386d824d40bf3173e942e0806, type: 3}
+  m_PrefabInstance: {fileID: 975848560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &982456437
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,6 +4455,141 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d0822586e4708b40b1db0beae4dea5d, type: 3}
   m_PrefabInstance: {fileID: 276646962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1038025067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038025068}
+  - component: {fileID: 1038025069}
+  m_Layer: 3
+  m_Name: GiveQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1038025068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038025067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 742074634}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1038025069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038025067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Ginger
+  sentences:
+  - I think I underestimated how many flowers we'd need...
+  - But it's alright! You can go find some more flowers, right?
+  - You're the best!
+--- !u!1001 &1041470417
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1636144890}
+    m_Modifications:
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806376086239897289, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_Name
+      value: Flower (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[0]'
+      value: 
+      objectReference: {fileID: 548349512}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[1]'
+      value: 
+      objectReference: {fileID: 37825419}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[2]'
+      value: 
+      objectReference: {fileID: 411330736}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+--- !u!4 &1041470418 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+  m_PrefabInstance: {fileID: 1041470417}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1058303143
 GameObject:
@@ -3894,6 +4727,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058303143}
   m_CullTransparentMesh: 1
+--- !u!1001 &1087312773
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1636144890}
+    m_Modifications:
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806376086239897289, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_Name
+      value: Flower (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[0]'
+      value: 
+      objectReference: {fileID: 411330736}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[1]'
+      value: 
+      objectReference: {fileID: 37825419}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[2]'
+      value: 
+      objectReference: {fileID: 548349512}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+--- !u!4 &1087312774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+  m_PrefabInstance: {fileID: 1087312773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1138264072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138264073}
+  - component: {fileID: 1138264074}
+  m_Layer: 3
+  m_Name: SubmittingQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1138264073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138264072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1221525484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1138264074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138264072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Snowflake
+  sentences:
+  - Ah, you've got the berries I asked for!
+  - Thank you 'berry' much!
 --- !u!1 &1157632321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,6 +5229,132 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193648949}
   m_CullTransparentMesh: 1
+--- !u!1 &1221525481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221525484}
+  - component: {fileID: 1221525483}
+  - component: {fileID: 1221525482}
+  m_Layer: 3
+  m_Name: briar the NPC
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &1221525482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221525481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 73
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4, y: 2.4, z: 2.4}
+  m_Center: {x: 0, y: 1.2, z: 0}
+--- !u!114 &1221525483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221525481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3482f4a490594334aa12de0e22db6067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Talks: []
+  player: {fileID: 2118909891}
+  Item: MUSHROOMS
+  FirstQuestAmount: 1
+  SecondQuestAmount: 3
+  ThirdQuestAmount: 7
+--- !u!4 &1221525484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221525481}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.258819, z: 0, w: 0.9659259}
+  m_LocalPosition: {x: 10, y: 0.65, z: -40}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 975848561}
+  - {fileID: 435653759}
+  - {fileID: 510189428}
+  - {fileID: 568741138}
+  - {fileID: 2023930156}
+  - {fileID: 1138264073}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
+--- !u!1 &1222212198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1222212199}
+  - component: {fileID: 1222212200}
+  m_Layer: 3
+  m_Name: QuestInProgress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1222212199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222212198}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 742074634}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1222212200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222212198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Ginger
+  sentences:
+  - Hmm... I think if we put some there and some over there, and-
+  - Oh, hey! How's the flower-gathering going?
 --- !u!1001 &1241657066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4473,6 +5566,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263130122}
   m_CullTransparentMesh: 1
+--- !u!1 &1269112755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1269112756}
+  - component: {fileID: 1269112757}
+  m_Layer: 3
+  m_Name: GiveFirstQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1269112756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269112755}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 742074634}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1269112757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269112755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Ginger
+  sentences:
+  - Hey! I just got an idea!
+  - I think it'd look great if we used flowers to decorate the town!
+  - All we need are the flowers! Can you go get some flowers for me? for me?
 --- !u!1 &1273286994
 GameObject:
   m_ObjectHideFlags: 0
@@ -4653,7 +5795,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 1, z: 50}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 724224583}
@@ -5734,6 +6876,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569355263}
   m_CullTransparentMesh: 1
+--- !u!1 &1636144889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1636144890}
+  m_Layer: 0
+  m_Name: Flowers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1636144890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636144889}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 199655079}
+  - {fileID: 2038195312}
+  - {fileID: 1087312774}
+  - {fileID: 1041470418}
+  - {fileID: 315404696}
+  - {fileID: 2110746158}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1647938763
 GameObject:
   m_ObjectHideFlags: 0
@@ -6418,6 +7597,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791128447}
   m_CullTransparentMesh: 1
+--- !u!1 &1797502438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797502439}
+  - component: {fileID: 1797502440}
+  m_Layer: 3
+  m_Name: SubmittingQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1797502439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797502438}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 742074634}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797502440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797502438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Ginger
+  sentences:
+  - You got the flowers I wanted, great!
+  - Thanks a bunch!
+  - Or should I say.. Thanks a 'bouquet'?
 --- !u!1 &1801422375
 GameObject:
   m_ObjectHideFlags: 0
@@ -7229,6 +8457,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010092068}
   m_CullTransparentMesh: 1
+--- !u!1 &2023930155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2023930156}
+  - component: {fileID: 2023930157}
+  m_Layer: 3
+  m_Name: AllQuestsDone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2023930156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023930155}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1221525484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2023930157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023930155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9cc85bb299ab24f9eee7efcb52054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCname: Snowflake
+  sentences:
+  - Hello!
+  - How's your day been?
+  - Thanks again for all the berries!
+--- !u!1001 &2038195311
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1636144890}
+    m_Modifications:
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806376086239897289, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_Name
+      value: Flower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[0]'
+      value: 
+      objectReference: {fileID: 37825419}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[1]'
+      value: 
+      objectReference: {fileID: 548349512}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[2]'
+      value: 
+      objectReference: {fileID: 411330736}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+--- !u!4 &2038195312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+  m_PrefabInstance: {fileID: 2038195311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2047173495
 GameObject:
   m_ObjectHideFlags: 0
@@ -7277,6 +8640,92 @@ MonoBehaviour:
   sentences:
   - Ah, you've got the berries I asked for!
   - Thank you 'berry' much!
+--- !u!1001 &2110746157
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1636144890}
+    m_Modifications:
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806376086239897289, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: m_Name
+      value: Flower (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[0]'
+      value: 
+      objectReference: {fileID: 37825419}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[1]'
+      value: 
+      objectReference: {fileID: 411330736}
+    - target: {fileID: 7941309610416904681, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+      propertyPath: 'flowerPatches.Array.data[2]'
+      value: 
+      objectReference: {fileID: 548349512}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+--- !u!4 &2110746158 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1347521878847142800, guid: 50a1144df54df3641b38a16e30d51968, type: 3}
+  m_PrefabInstance: {fileID: 2110746157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2113969535
 GameObject:
   m_ObjectHideFlags: 0
@@ -7681,8 +9130,10 @@ MonoBehaviour:
   - {fileID: 345945337}
   - {fileID: 606039429}
   - {fileID: 2010092068}
-  quests: []
   player: {fileID: 2118909896}
+  icount: 0
+  questcount: 0
+  item: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7692,6 +9143,10 @@ SceneRoots:
   - {fileID: 2118909893}
   - {fileID: 98913739}
   - {fileID: 187754044}
+  - {fileID: 1221525484}
+  - {fileID: 742074634}
   - {fileID: 1241657066}
   - {fileID: 465712678}
+  - {fileID: 1636144890}
+  - {fileID: 19609670}
   - {fileID: 415103584}

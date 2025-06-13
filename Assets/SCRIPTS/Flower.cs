@@ -12,6 +12,9 @@ public class Flower : MonoBehaviour
 
     public int choosing;
 
+    public int minWPdist = 5;
+    public int maxWPdist = 15;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,11 +23,12 @@ public class Flower : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(this.gameObject + "Collided with " + collision.gameObject);
+        // Debug.Log(this.gameObject + "Collided with " + collision.gameObject);
 
         if(collision.gameObject.CompareTag("Player"))
         {
             // Debug.Log(this.gameObject + "Collided with THE PLAYER!1!");
+            collision.gameObject.GetComponent<Player>().AddItemToInventory("FLOWERS", 1);
             RunAway();
         }
         else if (collision.gameObject.CompareTag("MUSHROAM"))
@@ -47,7 +51,7 @@ public class Flower : MonoBehaviour
     public void ShuffleAway()
     {
         // Debug.Log("Shuffling Away!!!!!");
-        transform.Translate(Random.Range(10, 50), 0, Random.Range(10, 50));
+        transform.Translate(Random.Range(minWPdist, maxWPdist), 0, Random.Range(minWPdist, maxWPdist));
         // float Xdist = flowerPatches[choosing].transform.position.x - transform.position.x;
         // float Zdist = flowerPatches[choosing].transform.position.z - transform.position.z;
         // Debug.Log("changed position by " + Xdist.ToString() + ", 0, " + Zdist.ToString());
@@ -58,7 +62,7 @@ public class Flower : MonoBehaviour
         choosing = Random.Range(0, flowerPatches.Length);
         transform.position = flowerPatches[choosing].transform.position;
         // Debug.Log(this.gameObject + "choosing = " + choosing.ToString());
-        transform.Translate(Random.Range(10,50), 0, Random.Range(10, 50));
+        transform.Translate(Random.Range(minWPdist, maxWPdist), 0, Random.Range(minWPdist, maxWPdist));
         // float Xdist = flowerPatches[choosing].transform.position.x - transform.position.x;
         // float Zdist = flowerPatches[choosing].transform.position.z - transform.position.z;
         // Debug.Log(this.gameObject + "changed position by " + Xdist.ToString() + ", 0, " + Zdist.ToString());

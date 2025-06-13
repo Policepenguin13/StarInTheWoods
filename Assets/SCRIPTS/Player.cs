@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
         }
         this.gameObject.GetComponent<FPbuttons>().popups[2].gameObject.SetActive(true);
         ItemTimerOn = true;
-        ItemTimer += 3f;
+        ItemTimer = 3f;
         // words = FPbuttons.popups[2].GetComponent<TextMeshProUGUI>();
         // words.text = "+ " + amount.ToString() + " " + item.ToUpper() + "!";
     }
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
     }
     private void QuestTimesUp()
     {
-        this.gameObject.GetComponent<FPbuttons>().popups[2].gameObject.SetActive(false);
+        this.gameObject.GetComponent<FPbuttons>().popups[1].gameObject.SetActive(false);
         QuestTimer = 0f;
     }
 
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         if (ItemTimerOn)
         {
             ItemTimer -= Time.deltaTime;
-            if (ItemTimer <= 0.0)
+            if (ItemTimer < 0.0)
             {
                 ItemTimesUp();
                 ItemTimerOn = false;
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
         if (QuestTimerOn)
         {
             QuestTimer -= Time.deltaTime;
-            if (QuestTimer <= 0.0)
+            if (QuestTimer < 0.0)
             {
                 QuestTimesUp();
                 QuestTimerOn = false;
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
 
         this.gameObject.GetComponent<FPbuttons>().popups[1].gameObject.SetActive(true);
         QuestTimerOn = true;
-        QuestTimer += 3f;
+        QuestTimer = 3f;
 
         // questGivers.Add(provider);
         // Debug.Log(questGivers.ToString());
