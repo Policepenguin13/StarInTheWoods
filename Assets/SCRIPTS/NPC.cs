@@ -63,29 +63,88 @@ public class NPC : MonoBehaviour
 
             if (QuestsForThisNPC == 0) // done no quests for this NPC before
             {
-                Debug.Log("player has done 0 quests for this NPC");
+                // Debug.Log("player has done 0 quests for this NPC");
 
                 if (player.GetComponent<Player>().Quests.ContainsKey(Item)) // has the quest
                 {
-                    Debug.Log("player has the quest");
+                    // Debug.Log("player has the quest");
                     if (player.GetComponent<Player>().Inventory[Item] < FirstQuestAmount) // not enough items
                     {
                         talkies = Talks[2].GetComponent<MyDialogue>(); // Quest in Progress
-                        Debug.Log("player doesn't have enough items");
+                        // Debug.Log("player doesn't have enough items");
                     }
                     else
                     {
                         talkies = Talks[4].GetComponent<MyDialogue>(); // Quest submitting
-                        Debug.Log("player has enough items, submit quest!!");
+                        // Debug.Log("player has enough items, submit quest!!");
                         QuestStatus = "Submitting";
                     }
                 }
                 else // doesn't have the quest
                 {
-                    Debug.Log("player doesn't have the quest!");
+                    // Debug.Log("player doesn't have the quest!");
                     talkies = Talks[0].GetComponent<MyDialogue>(); // Give first quest
                     QuestStatus = "Giving";
                 }
+            }
+            else if (QuestsForThisNPC == 1) // done 1 quest for this NPc before
+            {
+                // Debug.Log("player has done 1 quest for this NPC");
+
+                if (player.GetComponent<Player>().Quests.ContainsKey(Item)) // has the quest
+                {
+                    // Debug.Log("player has the quest");
+                    if (player.GetComponent<Player>().Inventory[Item] < SecondQuestAmount) // not enough items
+                    {
+                        talkies = Talks[2].GetComponent<MyDialogue>(); // Quest in Progress
+                        // Debug.Log("player doesn't have enough items");
+                    }
+                    else
+                    {
+                        talkies = Talks[4].GetComponent<MyDialogue>(); // Quest submitting
+                        // Debug.Log("player has enough items, submit quest!!");
+                        QuestStatus = "Submitting";
+                    }
+                }
+                else // doesn't have the quest
+                {
+                    // Debug.Log("player doesn't have the quest!");
+                    talkies = Talks[1].GetComponent<MyDialogue>(); // Give 2nd quest
+                    QuestStatus = "Giving";
+                }
+            }
+            else if (QuestsForThisNPC == 2) // done 2 quest for this NPC before
+            {
+                // Debug.Log("player has done 2 quests for this NPC");
+
+                if (player.GetComponent<Player>().Quests.ContainsKey(Item)) // has the quest
+                {
+                    // Debug.Log("player has the quest");
+                    if (player.GetComponent<Player>().Inventory[Item] < ThirdQuestAmount) // not enough items
+                    {
+                        talkies = Talks[2].GetComponent<MyDialogue>(); // Quest in Progress
+                        // Debug.Log("player doesn't have enough items");
+                        QuestStatus = "Inactive";
+                    }
+                    else
+                    {
+                        talkies = Talks[4].GetComponent<MyDialogue>(); // Quest submitting
+                        // Debug.Log("player has enough items, submit quest!!");
+                        QuestStatus = "Submitting";
+                    }
+                }
+                else // doesn't have the quest
+                {
+                    // Debug.Log("player doesn't have the quest!");
+                    talkies = Talks[1].GetComponent<MyDialogue>(); // Give 3rd quest
+                    QuestStatus = "Giving";
+                }
+            }
+            else
+            {
+                // Debug.Log("player has completed all quests for this NPC");
+                talkies = Talks[3].GetComponent<MyDialogue>();
+                QuestStatus = "Inactive";
             }
 
             manager.StartDialogue(talkies, this.gameObject);
@@ -122,14 +181,29 @@ public class NPC : MonoBehaviour
             }
             else if (QuestsForThisNPC == 2)
             {
-                player.GetComponent<Player>().AddQuest(Item, SecondQuestAmount);
+                player.GetComponent<Player>().AddQuest(Item, ThirdQuestAmount);
             }
         }
         else if (QuestStatus == "Submitting")
         {
             // Debug.Log("NPC's quest has already been added");
             player.GetComponent<Player>().RemoveQuest(Item);
+            if (QuestsForThisNPC == 0)
+            {
+                player.GetComponent<Player>().AddItemToInventory(Item, -FirstQuestAmount);
+            }
+            else if (QuestsForThisNPC == 1)
+            {
+                player.GetComponent<Player>().AddItemToInventory(Item, -SecondQuestAmount);
+            }
+            else
+            {
+                player.GetComponent<Player>().AddItemToInventory(Item, -ThirdQuestAmount);
+            }
+
+            QuestsForThisNPC += 1;
         }
+        // else { Debug.Log("quest status is none"); }
         // player.GetComponent<Player>().AddQuest()
 
     }

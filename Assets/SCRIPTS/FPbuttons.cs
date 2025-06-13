@@ -113,7 +113,7 @@ public class FPbuttons : MonoBehaviour
     // opens the quest menu
     void Quest()
     {
-        Debug.Log("quest action performed");
+        // Debug.Log("quest action performed");
         // this.gameObject.GetComponent<Player>().UpdateQuests();
         popups[3].gameObject.SetActive(true);
     }
@@ -121,7 +121,7 @@ public class FPbuttons : MonoBehaviour
     // opens inventory
     void Inventory()
     {
-        Debug.Log("Inventory Action Was Just Performed");
+        // Debug.Log("Inventory Action Was Just Performed");
         // this.gameObject.GetComponent<Player>().UpdateQuests();
         popups[4].gameObject.SetActive(true);
     }
@@ -135,9 +135,9 @@ public class FPbuttons : MonoBehaviour
         Debug.Log("Close performed");
 
 
-        if (NPCinRange)
-        {
-            NPCinQuestion.GetComponent<NPC>().Close();
-        }
+        // if (NPCinRange)
+        // {
+        //     NPCinQuestion.GetComponent<NPC>().Close();
+        // }
     }
 }

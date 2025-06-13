@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     // This script handles the player-side inventory and quest stuff
 
     public int TotalQuestsCompleted = 0;
+    public int StarfallCounter = 0;
     // every interval of 3, starfall!
     
     // public int Stars = 0;
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
 
     public Dictionary<string, int> Quests = new();
     // public List<Transform> questGivers = new();
-    List<string> Questprintout = new();
+    public List<string> QuestList = new();
 
     public Dictionary<string, int> Inventory = new();
 
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour
         TextMeshProUGUI words = GetComponent<FPbuttons>().popups[2].GetComponent<TextMeshProUGUI>();
         if (amount < 0)
         {
-            words.text = "- " + amount.ToString() + " " + item.ToUpper() + "!";
+            words.text = amount.ToString() + " " + item.ToUpper() + "!";
         }
         else
         {
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour
     private void QuestTimesUp()
     {
         this.gameObject.GetComponent<FPbuttons>().popups[2].gameObject.SetActive(false);
-        ItemTimer = 0f;
+        QuestTimer = 0f;
     }
 
     private void Update()
@@ -102,12 +103,12 @@ public class Player : MonoBehaviour
     public void AddQuest(string item, int goalamount) //Transform provider)
     {
         Quests.Add(item, goalamount);
-        string ele = "(" + item +"  "+ goalamount.ToString()+")";
-        Questprintout.Add(ele);
+        // string ele = item;
+        QuestList.Add(item);
 
         Debug.Log("Added " + item + " " + goalamount.ToString() + " to quests");
 
-        Debug.Log(Questprintout.ToString());
+        //Debug.Log(QuestList.ToString());
         //Debug.Log(Quests.ToString());
 
         this.gameObject.GetComponent<FPbuttons>().popups[1].gameObject.SetActive(true);
@@ -126,5 +127,15 @@ public class Player : MonoBehaviour
     {
         Quests.Remove(item);
         Debug.Log("Removed " + item + " from quests");
+        QuestList.Remove(item);
+
+        // Debug.Log("Removed " + item + " from quest list, questlist now = " + QuestList.ToString());
+        TotalQuestsCompleted += 1;
+        StarfallCounter += 1;
+        if (StarfallCounter > 3)
+        {
+            StarfallCounter = 0;
+            // call starfall here
+        }
     }
 }
