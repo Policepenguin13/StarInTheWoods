@@ -10,8 +10,10 @@ public class MushroamMove : MonoBehaviour
     // public float speed;
     // public float direct;
     public bool WanderActive;
+    public bool StartleActive;
     public float wanderSpeed = 10f;
     public float wanderDirection;
+   
 
     public Rigidbody rb;
 
@@ -29,22 +31,33 @@ public class MushroamMove : MonoBehaviour
         {
             this.transform.position += this.transform.forward * wanderSpeed * Time.fixedDeltaTime;
         }
+        else if (StartleActive)
+        {
+            this.transform.position += this.transform.forward * wanderSpeed * Time.fixedDeltaTime;
+        }
     }
 
     public void Roam()
     {
         wanderDirection = Random.Range(0f, 360f);
-        this.transform.Rotate(0, wanderDirection, 0);
+        // this.transform.Rotate(0, wanderDirection, 0);
+        this.transform.eulerAngles = new Vector3(0, wanderDirection, 0);
     }
 
     public void WanderStop()
     {
         WanderActive = false;
+        StartleActive = true;
+        Debug.Log("wander deactive, startle active");
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = false; 
     }
 
     public void CalmDown()
     {
         WanderActive = true;
+        StartleActive = false;
+        Debug.Log("wander active, startle deactive");
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
     }
 
     // public void FeedDirection(float WanderDirection)
@@ -52,7 +65,7 @@ public class MushroamMove : MonoBehaviour
     //    this.transform.Rotate(0, WanderDirection, 0);
     // }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player") == true)
         {
@@ -61,7 +74,7 @@ public class MushroamMove : MonoBehaviour
             collision.gameObject.GetComponent<Player>().AddItemToInventory("MUSHROOMS", 1);
 
             this.transform.LookAt(collision.gameObject.transform);
-            // this.transform.eulerAngles = new Vector3(-transform.eulerAngles.x, -transform.eulerAngles.y, -transform.eulerAngles.z);
+            this.transform.eulerAngles = new Vector3(0, -transform.eulerAngles.y, 0);
             
             // float yrot = this.transform.rotation.eulerAngles.y;
             // this.transform.Rotate(0, -yrot, 0);
@@ -71,9 +84,9 @@ public class MushroamMove : MonoBehaviour
             Debug.Log("COLLIDED WITH FLOWER, startling");
             this.GetComponent<Animator>().SetTrigger("Startle");
 
-            this.transform.LookAt(collision.gameObject.transform);
-            float yrot = this.transform.rotation.eulerAngles.y;
-            this.transform.Rotate(0, -yrot, 0);
+            // this.transform.LookAt(collision.gameObject.transform);
+            // float yrot = this.transform.rotation.eulerAngles.y;
+            // this.transform.Rotate(0, -yrot, 0);
         }
         else
         {

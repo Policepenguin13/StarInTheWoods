@@ -23,7 +23,7 @@ public class WanderState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("updating wander state");
+        // Debug.Log("updating wander state");
         WanderTime -= Time.fixedDeltaTime;
         // animator.GetComponent<MushroamMove>().wanderTime = WanderTime;
 
