@@ -12,6 +12,7 @@ public class WanderState : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("entering wander state");
         animator.GetComponent<MushroamMove>().WanderActive = true;
         animator.GetComponent<MushroamMove>().Roam();
         // ChooseDirection(animator);
@@ -22,6 +23,7 @@ public class WanderState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("updating wander state");
         WanderTime -= Time.fixedDeltaTime;
         // animator.GetComponent<MushroamMove>().wanderTime = WanderTime;
 
@@ -46,6 +48,7 @@ public class WanderState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("exiting wander state");
         animator.GetComponent<MushroamMove>().WanderActive = false;
         animator.GetComponent<MushroamMove>().WanderStop();
     }

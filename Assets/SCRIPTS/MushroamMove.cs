@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class MushroamMove : MonoBehaviour
 {
+
+    // Controls the mushroom's movement and direction, and to some degree state-swapping 
+
+
     // public float timewander;
     // public float speed;
     // public float direct;
@@ -21,7 +25,10 @@ public class MushroamMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        this.transform.position += this.transform.forward * wanderSpeed * Time.deltaTime;
+        if (WanderActive)
+        {
+            this.transform.position += this.transform.forward * wanderSpeed * Time.fixedDeltaTime;
+        }
     }
 
     public void Roam()
@@ -35,6 +42,11 @@ public class MushroamMove : MonoBehaviour
         WanderActive = false;
     }
 
+    public void CalmDown()
+    {
+        WanderActive = true;
+    }
+
     // public void FeedDirection(float WanderDirection)
     // {
     //    this.transform.Rotate(0, WanderDirection, 0);
@@ -46,10 +58,22 @@ public class MushroamMove : MonoBehaviour
         {
             Debug.Log("COLLIDED WITH PLAYER, startling");
             this.GetComponent<Animator>().SetTrigger("Startle");
+            collision.gameObject.GetComponent<Player>().AddItemToInventory("MUSHROOMS", 1);
+
+            this.transform.LookAt(collision.gameObject.transform);
+            // this.transform.eulerAngles = new Vector3(-transform.eulerAngles.x, -transform.eulerAngles.y, -transform.eulerAngles.z);
+            
+            // float yrot = this.transform.rotation.eulerAngles.y;
+            // this.transform.Rotate(0, -yrot, 0);
+
         } else if (collision.gameObject.CompareTag("FLOWER") == true)
         {
             Debug.Log("COLLIDED WITH FLOWER, startling");
             this.GetComponent<Animator>().SetTrigger("Startle");
+
+            this.transform.LookAt(collision.gameObject.transform);
+            float yrot = this.transform.rotation.eulerAngles.y;
+            this.transform.Rotate(0, -yrot, 0);
         }
         else
         {

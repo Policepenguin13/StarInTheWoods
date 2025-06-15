@@ -17,6 +17,9 @@ public class FPbuttons : MonoBehaviour
 
     Transform NPCinQuestion;
 
+    public bool seenQuestTooltip = false;
+    public bool seenItemTooltip = false;
+
     private void Awake()
     {
         controls = new InputSystem_Actions();
@@ -67,7 +70,7 @@ public class FPbuttons : MonoBehaviour
             
             if (interacting == false)
             {
-                popups[0].gameObject.SetActive(true);
+                //popups[0].gameObject.SetActive(true);
             }
         } else
         {
@@ -84,12 +87,31 @@ public class FPbuttons : MonoBehaviour
             NPCinQuestion = null;
             // Debug.Log(other.ToString() + " WAS AN NPC");
 
-            popups[0].gameObject.SetActive(false);
+            // popups[0].gameObject.SetActive(false);
         }
         else
         {
             // Debug.Log(other.ToString() + " isnt an npc, returning...(triggerExit)");
             return;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("NPC"))
+        {
+            // NPCinRange = true;
+            // NPCinQuestion = other.transform;
+            // Debug.Log(other.ToString() + " IS AN NPC!");
+
+            if (interacting == false)
+            {
+                popups[0].gameObject.SetActive(true);
+            }
+            else
+            {
+                popups[0].gameObject.SetActive(false);
+            }
         }
     }
 
@@ -132,7 +154,7 @@ public class FPbuttons : MonoBehaviour
         // calls manager's EndDialogue() ?
         popups[3].gameObject.SetActive(false);
         popups[4].gameObject.SetActive(false);
-        Debug.Log("Close performed");
+        // Debug.Log("Close performed");
 
 
         // if (NPCinRange)

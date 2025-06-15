@@ -51,16 +51,52 @@ public class Player : MonoBehaviour
         Inventory[item] += amount;
         // Debug.Log(Inventory[item].ToString() + " " + item + " GATHERED!");
 
+
         TextMeshProUGUI words = GetComponent<FPbuttons>().popups[2].GetComponent<TextMeshProUGUI>();
+        // if (ItemTimer < 0f)
+        // {
+        //     if (words.text.contains(item))
+        //     {
+        //         amount += 1;
+        //     }
+        // }
+
+        
         if (amount < 0)
         {
             words.text = amount.ToString() + " " + item.ToUpper() + "!";
+        }
+        else if (amount == 1)
+        {
+            if (item == "FLOWERS")
+            {
+                words.text = "+1 FLOWER!";
+            }
+            else if (item == "MUSHROOMS")
+            {
+                words.text = "+1 MUSHROOM!";
+            }
+            else if (item == "STARS")
+            {
+                words.text = "+1 STAR!";
+            }
         }
         else
         {
             words.text = "+ " + amount.ToString() + " " + item.ToUpper() + "!";
         }
         this.gameObject.GetComponent<FPbuttons>().popups[2].gameObject.SetActive(true);
+
+        if (this.gameObject.GetComponent<FPbuttons>().seenItemTooltip)
+        {
+            GetComponent<FPbuttons>().popups[2].GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            GetComponent<FPbuttons>().popups[2].GetChild(0).gameObject.SetActive(true);
+            GetComponent<FPbuttons>().seenItemTooltip = true;
+        }
+
         ItemTimerOn = true;
         ItemTimer = 3f;
         // words = FPbuttons.popups[2].GetComponent<TextMeshProUGUI>();
@@ -112,6 +148,17 @@ public class Player : MonoBehaviour
         //Debug.Log(Quests.ToString());
 
         this.gameObject.GetComponent<FPbuttons>().popups[1].gameObject.SetActive(true);
+
+        if (this.gameObject.GetComponent<FPbuttons>().seenQuestTooltip)
+        {
+            GetComponent<FPbuttons>().popups[1].GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            GetComponent<FPbuttons>().popups[1].GetChild(0).gameObject.SetActive(true);
+            GetComponent<FPbuttons>().seenQuestTooltip = true;
+        }
+
         QuestTimerOn = true;
         QuestTimer = 3f;
 
@@ -135,7 +182,7 @@ public class Player : MonoBehaviour
         if (StarfallCounter > 3)
         {
             StarfallCounter = 0;
-            // call starfall here
+            // trigger starfall here
         }
     }
 }
