@@ -12,9 +12,12 @@ public class Player : MonoBehaviour
 {
     // This script handles the player-side inventory and quest stuff
 
-    public int TotalQuestsCompleted = 0;
+    public int TotalQuestsCompleted = 0; // every interval of 3, starfall!
     public int StarfallCounter = 0;
-    // every interval of 3, starfall!
+    public int StarfallCount = 0;
+
+    public GameObject[] stars;
+    
     
     // public int Stars = 0;
     // public int UntilNextStarfall = 0;
@@ -173,7 +176,7 @@ public class Player : MonoBehaviour
     public void RemoveQuest(string item)
     {
         Quests.Remove(item);
-        Debug.Log("Removed " + item + " from quests");
+        // Debug.Log("Removed " + item + " from quests");
         QuestList.Remove(item);
 
         // Debug.Log("Removed " + item + " from quest list, questlist now = " + QuestList.ToString());
@@ -182,7 +185,14 @@ public class Player : MonoBehaviour
         if (StarfallCounter > 3)
         {
             StarfallCounter = 0;
+            StarfallCount += 1;
             // trigger starfall here
+            // find the Stars objects, call Starfall(StarfallCount)
+            foreach (GameObject obj in stars)
+            {
+                obj.SetActive(true);
+                obj.GetComponent<star>().Starfall(StarfallCount);
+            }
         }
     }
 }
