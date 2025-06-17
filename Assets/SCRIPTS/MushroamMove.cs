@@ -48,7 +48,7 @@ public class MushroamMove : MonoBehaviour
     {
         WanderActive = false;
         StartleActive = true;
-        Debug.Log("wander deactive, startle active");
+        // Debug.Log("wander deactive, startle active");
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false; 
     }
 
@@ -56,7 +56,7 @@ public class MushroamMove : MonoBehaviour
     {
         WanderActive = true;
         StartleActive = false;
-        Debug.Log("wander active, startle deactive");
+        // Debug.Log("wander active, startle deactive");
         this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
     }
 
@@ -69,7 +69,7 @@ public class MushroamMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") == true)
         {
-            Debug.Log("COLLIDED WITH PLAYER, startling");
+            // Debug.Log("COLLIDED WITH PLAYER, startling");
             this.GetComponent<Animator>().SetTrigger("Startle");
             collision.gameObject.GetComponent<Player>().AddItemToInventory("MUSHROOMS", 1);
 
@@ -81,7 +81,7 @@ public class MushroamMove : MonoBehaviour
 
         } else if (collision.gameObject.CompareTag("FLOWER") == true)
         {
-            Debug.Log("COLLIDED WITH FLOWER, startling");
+            // Debug.Log("COLLIDED WITH FLOWER, startling");
             this.GetComponent<Animator>().SetTrigger("Startle");
 
             // this.transform.LookAt(collision.gameObject.transform);

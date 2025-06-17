@@ -16,7 +16,7 @@ public class StartleState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         FleeingTime = 8f;
-        Debug.Log("entering startle state");
+        // Debug.Log("entering startle state");
         animator.GetComponent<MushroamMove>().wanderSpeed += 5;
     }
 
@@ -28,7 +28,7 @@ public class StartleState : StateMachineBehaviour
         if (FleeingTime < 0f)
         {
             animator.GetComponent<MushroamMove>().CalmDown();
-            Debug.Log("triggering Calm!");
+            // Debug.Log("triggering Calm!");
             animator.SetTrigger("Calm");
         }
     }
@@ -36,7 +36,7 @@ public class StartleState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Exiting startle state");
+        // Debug.Log("Exiting startle state");
         animator.GetComponent<MushroamMove>().wanderSpeed -= 5;
     }
 }

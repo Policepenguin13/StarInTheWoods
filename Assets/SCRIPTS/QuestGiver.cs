@@ -25,7 +25,7 @@ public class QuestGiver : MonoBehaviour
     {
         questPopup.SetActive(true);
         nameText.text = questToGive.Title;
-        Debug.Log("Quest popup opened");
+        // Debug.Log("Quest popup opened");
     }
 
     public void AcceptQuest()
@@ -33,7 +33,7 @@ public class QuestGiver : MonoBehaviour
         questPopup.SetActive(false);
         questToGive.IsActive = true;
         // Give player the quest
-        Debug.Log("Quest gets given to players here");
+        // Debug.Log("Quest gets given to players here");
         //player.GetComponent<Player>().Quests;
     }
 }

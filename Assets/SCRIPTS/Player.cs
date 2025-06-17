@@ -145,7 +145,7 @@ public class Player : MonoBehaviour
         // string ele = item;
         QuestList.Add(item);
 
-        Debug.Log("Added " + item + " " + goalamount.ToString() + " to quests");
+        // Debug.Log("Added " + item + " " + goalamount.ToString() + " to quests");
 
         //Debug.Log(QuestList.ToString());
         //Debug.Log(Quests.ToString());

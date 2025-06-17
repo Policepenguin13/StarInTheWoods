@@ -14,7 +14,7 @@ public class star : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("player detected by star!");
+            // Debug.Log("player detected by star!");
             other.gameObject.GetComponent<Player>().AddItemToInventory("STARS", 1);
             this.gameObject.SetActive(false);
         }
@@ -22,7 +22,7 @@ public class star : MonoBehaviour
 
     public void Starfall(int number)
     {
-        Debug.Log(this.gameObject.ToString() + " starfall triggered!");
+        // Debug.Log(this.gameObject.ToString() + " starfall triggered!");
         // activate this gameobject if number == starnumber
         if (number == StarNumber)
         {

@@ -32,7 +32,7 @@ public class BerryBush : MonoBehaviour
         {
             if (!TimerStarted)
             {
-                Debug.Log("Player detected!!! Starting timer!!");
+                // Debug.Log("Player detected!!! Starting timer!!");
                 TimerStarted = true;
                 GetComponent<CapsuleCollider>().enabled = false;
                 Collected();

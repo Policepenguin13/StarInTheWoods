@@ -64,7 +64,7 @@ public class PlayerControls : MonoBehaviour
     void Interact()
     {
     transform.localScale *= 1.1f;
-    Debug.Log("Interact was pressed!!");
+    // Debug.Log("Interact was pressed!!");
     }
 
     void OnEnable()

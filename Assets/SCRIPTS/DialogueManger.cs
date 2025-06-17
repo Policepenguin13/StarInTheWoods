@@ -39,7 +39,7 @@ public class DialogueManger : MonoBehaviour
 
         animator.SetBool("IsOpen", true);
         
-        Debug.Log("Starting conversation with " + dialogue.NPCname);
+        // Debug.Log("Starting conversation with " + dialogue.NPCname);
         NPCname.text = dialogue.NPCname; //.ToUpper();
         convo = dialogue;
 
@@ -80,7 +80,7 @@ public class DialogueManger : MonoBehaviour
 
     public void EndDialogue()
     {
-        Debug.Log("End of conversation with " + convo.name);
+        // Debug.Log("End of conversation with " + convo.name);
         animator.SetBool("IsOpen", false);
         AmTalking = false;
         whoIsSpeaking.GetComponent<NPC>().DialogueEnded();

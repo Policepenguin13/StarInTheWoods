@@ -155,11 +155,6 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void Close()
-    {
-        Debug.Log("stop / skip dialogue with NPC!!"); 
-    }
-
     public void DialogueEnded()
     {
         player.GetComponent<FPmove>().CanMove = true;
@@ -170,7 +165,7 @@ public class NPC : MonoBehaviour
 
         if (QuestStatus == "Giving") // player.GetComponent<Player>().Quests.ContainsKey(Item) == false)
         {
-            Debug.Log("NPC is adding quest");
+            // Debug.Log("NPC is adding quest");
             if (QuestsForThisNPC == 0)
             {
                 player.GetComponent<Player>().AddQuest(Item, FirstQuestAmount);
